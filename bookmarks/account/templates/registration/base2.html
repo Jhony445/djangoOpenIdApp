@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/navStyles.css" %}">
+    <link rel="stylesheet" href="{% static "css/loginStyles.css" %}">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">OpenId</a>
+        <nav class="navbar" id="navbar">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <button id="show_login" class="btn_default">Login</button>
+        </nav>
+    </header>
+
+    <div class="container" id="container">
+        <div class="btn_close">
+            <button id="close" style="z-index: 9999999;"><i class="fa-solid fa-x"></i></button>
+        </div>
+
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="card">
+                    <a class="social-link1" href="href="{% url "social:begin" "facebook" %}"">
+                        <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    </a>
+                    <a class="social-link2" href="{% url "social:begin" "google-oauth2" %}">
+                        <i class="fa-brands fa-twitter" style="color: #ffffff;"></i> </a>
+                    <a class="social-link3" href="{% url 'social:begin' 'spotify' %}">
+                        <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                    </a>
+                </div>
+                <span>or use your email for registeration</span>
+                <div class="input-icon" style="color: black;">
+                    <input type="text" placeholder="Name">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-icon" style="color: black;">
+                    <input type="email" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-icon" style="color: black;">
+                    <input type="email" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <button class="btn_default">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            
+            <form>
+                <h1>Sign In</h1>
+                <div class="card">
+                    <a class="social-link1" href="{% url "social:begin" "facebook" %}">
+                        <i class="fa-brands fa-facebook style="color: #ffffff;"></i>
+                    </a>
+                    <a class="social-link2" href="{% url "social:begin" "google-oauth2" %}">
+                        <i class="fa-brands fa-google" style="color: #ffffff;"></i> </a>
+                    <a class="social-link3" href="{% url 'social:begin' 'spotify' %}">
+                        <i class="fa-brands fa-spotify" style="color: #ffffff;"></i>
+                    </a>
+                </div>
+                <span>or use your email password</span>
+                <div class="input-icon" style="color: black;">
+                    <input type="email" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-icon" style="color: black;">
+                    <input type="password" placeholder="Password">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <a href="#">Forget Your Password?</a>
+                <button class="btn_default">Sign In</button>
+            </form>
+            
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden btn_default" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden btn_default" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="Home">
+        <img src="{% static "images/arbol.png" %}" draggable="false" id="arbol">
+        <img src="{% static "images/arbusto.png" %}" draggable="false" id="arbusto">
+        <h1 id="text">OpenId</h1>
+        <img src="{% static "images/luna.png" %}" draggable="false" id="luna">
+        <img src="{% static "images/particulas.png" %}" draggable="false" id="particulas">
+        <img src="{% static "images/principal.png" %}" draggable="false" id="principal">
+    </section>
+
+
+    <section class="About">
+        <h1>Parallax scrolling website</h1>
+        
+    </section>
+    <script src="{% static "js/script.js" %}"></script>
+</body>
+
+</html>
